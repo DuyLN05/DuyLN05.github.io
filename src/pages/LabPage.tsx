@@ -69,12 +69,12 @@ export const LabPage: React.FC = () => {
     setTimeout(() => setCopiedSnippetId(null), 2000);
   };
 
-  const triggerCyberConfetti = () => {
+  const triggerOceanConfetti = () => {
     confetti({
       particleCount: 80,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#38E8FF', '#9B7CFF', '#FF4FD8', '#00F5A0']
+      colors: ['#43D3E6', '#6AA7F5', '#FF9484', '#5FE3B5', '#F0D49A']
     });
   };
 
@@ -131,7 +131,7 @@ osc.start();`
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-[var(--text-primary)] flex items-center gap-2">
                 <TerminalIcon className="w-5 h-5 text-[var(--accent-cyan)]" />
-                HUD Cyber Terminal
+                Ocean Terminal
               </h3>
               <Badge variant="cyan">Interactive CLI</Badge>
             </div>
@@ -146,18 +146,18 @@ osc.start();`
             <div className="space-y-1">
               <h4 className="text-sm font-bold text-[var(--text-primary)] flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[var(--accent-magenta)]" />
-                Cyberpunk Easter Egg
+                Ocean Easter Egg
               </h4>
               <p className="text-xs text-[var(--text-secondary)]">
-                Kích hoạt hiệu ứng pháo hoa neon phủ lên giao diện.
+                Thả một đợt bọt biển lấp lánh phủ lên giao diện.
               </p>
             </div>
             <button
-              onClick={triggerCyberConfetti}
+              onClick={triggerOceanConfetti}
               type="button"
-              className="px-4 py-2 rounded-lg font-mono text-xs font-bold bg-[var(--accent-magenta)]/20 text-[var(--accent-magenta)] border border-[var(--accent-magenta)]/40 hover:bg-[var(--accent-magenta)] hover:text-black transition-all shrink-0"
+              className="px-4 py-2 rounded-lg font-mono text-xs font-bold bg-[var(--accent-magenta-dim)] text-[var(--accent-magenta)] border border-[var(--accent-magenta-border)] hover:bg-[var(--accent-magenta)] hover:text-[var(--on-accent)] transition-all shrink-0"
             >
-              Phóng Neon Spark
+              Thả bọt biển
             </button>
           </div>
         </div>
@@ -166,7 +166,7 @@ osc.start();`
         <div className="lg:col-span-5 space-y-8">
           
           {/* Web Audio Synth Sandbox */}
-          <div className="hud-panel hud-panel-corner p-6 rounded-xl space-y-5 border-[var(--accent-cyan)]/30">
+          <div className="hud-panel hud-panel-corner p-6 rounded-xl space-y-5 border-[var(--border-cyber)]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-sm font-bold text-[var(--accent-cyan)]">
                 <Music className="w-5 h-5" />
@@ -182,14 +182,14 @@ osc.start();`
             </p>
 
             {/* Visualizer Equalizer Bar Animation */}
-            <div className="h-16 bg-[#070b16] rounded-lg p-3 border border-[var(--border-cyber)] flex items-end justify-center gap-1.5 overflow-hidden">
+            <div className="theme-deep h-16 bg-[#06182B] rounded-lg p-3 border border-[var(--border-cyber)] flex items-end justify-center gap-1.5 overflow-hidden">
               {[40, 70, 30, 90, 50, 85, 20, 60, 95, 45, 80, 35].map((val, idx) => (
                 <div
                   key={idx}
                   className={`w-2.5 rounded-t-sm transition-all duration-150 ${
                     isPlayingSynth
-                      ? 'bg-gradient-to-t from-[var(--accent-cyan)] to-[var(--accent-magenta)] animate-equalizer'
-                      : 'bg-slate-700/40 h-2'
+                      ? 'bg-gradient-to-t from-[var(--accent-cyan)] to-[var(--accent-violet)] animate-equalizer'
+                      : 'bg-[var(--border-cyber)] h-2'
                   }`}
                   style={{
                     height: isPlayingSynth ? `${val}%` : '8px',
@@ -233,8 +233,8 @@ osc.start();`
               type="button"
               className={`w-full py-2.5 rounded-lg font-mono text-xs font-bold flex items-center justify-center gap-2 transition-all ${
                 isPlayingSynth
-                  ? 'bg-rose-500 text-white hover:bg-rose-600'
-                  : 'bg-[var(--accent-cyan)] text-black hover:bg-cyan-300 hover:shadow-neon-cyan'
+                  ? 'bg-[var(--accent-magenta)] text-[var(--on-accent)] hover:brightness-110'
+                  : 'bg-[var(--accent-cyan)] text-[var(--on-accent)] hover:brightness-110 hover:shadow-neon-cyan'
               }`}
             >
               {isPlayingSynth ? (
@@ -254,7 +254,7 @@ osc.start();`
           {/* System Status Display (Decorative) */}
           <div className="hud-panel p-5 rounded-xl space-y-3 font-mono text-xs">
             <div className="text-[var(--text-muted)] uppercase tracking-wider flex items-center gap-2 font-semibold">
-              <Activity className="w-4 h-4 text-emerald-400" />
+              <Activity className="w-4 h-4 text-[var(--accent-green)]" />
               Runtime Telemetry
             </div>
             <div className="space-y-1.5 text-[var(--text-secondary)]">
@@ -268,7 +268,7 @@ osc.start();`
               </div>
               <div className="flex justify-between">
                 <span>Reduced Motion:</span>
-                <span className="text-emerald-400">Supported (WCAG)</span>
+                <span className="text-[var(--accent-green)]">Supported (WCAG)</span>
               </div>
             </div>
           </div>
@@ -298,8 +298,8 @@ osc.start();`
                 >
                   {copiedSnippetId === snippet.id ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-emerald-400">Đã chép!</span>
+                      <Check className="w-3.5 h-3.5 text-[var(--accent-green)]" />
+                      <span className="text-[var(--accent-green)]">Đã chép!</span>
                     </>
                   ) : (
                     <>
@@ -309,7 +309,7 @@ osc.start();`
                   )}
                 </button>
               </div>
-              <pre className="p-4 bg-[#070b16] overflow-x-auto text-xs font-mono text-[var(--text-secondary)] leading-relaxed">
+              <pre className="theme-deep p-4 bg-[#06182B] overflow-x-auto text-xs font-mono text-[var(--text-secondary)] leading-relaxed">
                 <code>{snippet.code}</code>
               </pre>
             </div>

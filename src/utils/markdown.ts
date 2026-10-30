@@ -41,12 +41,12 @@ marked.use({
       } catch {
         highlighted = text;
       }
-      return `<div class="relative group my-4 rounded-lg overflow-hidden border border-[var(--border-cyber)]">
-        <div class="flex items-center justify-between px-4 py-1.5 bg-[#0b1020] border-b border-[var(--border-subtle)] text-xs font-mono text-[var(--accent-cyan)]">
+      return `<div class="theme-deep relative group my-4 rounded-xl overflow-hidden border border-[var(--border-cyber)]">
+        <div class="flex items-center justify-between px-4 py-1.5 bg-[#0A2540] border-b border-[var(--border-subtle)] text-xs font-mono text-[var(--accent-cyan)]">
           <span>${validLanguage}</span>
-          <span class="text-[var(--text-muted)] text-[10px] tracking-wider uppercase">Code HUD</span>
+          <span class="text-[var(--text-muted)] text-[10px] tracking-wider uppercase">Code</span>
         </div>
-        <pre class="p-4 bg-[#070a13] overflow-x-auto text-sm font-mono"><code class="hljs language-${validLanguage}">${highlighted}</code></pre>
+        <pre class="p-4 bg-[#06182B] overflow-x-auto text-sm font-mono"><code class="hljs language-${validLanguage}">${highlighted}</code></pre>
       </div>`;
     },
     heading({ text, depth }: { text: string; depth: number }): string {

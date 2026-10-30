@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, Heart, Terminal, Music } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, Anchor, Music } from 'lucide-react';
 import { profileData } from '../../data/profile';
 
 export const Footer: React.FC = () => {
@@ -12,9 +12,9 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2 font-mono text-lg font-bold text-[var(--text-primary)]">
-              <Terminal className="w-5 h-5 text-[var(--accent-cyan)]" />
+              <Anchor className="w-5 h-5 text-[var(--accent-cyan)]" />
               <span>{profileData.name}</span>
-              <span className="text-xs px-2 py-0.5 rounded bg-[var(--accent-green)]/10 text-[var(--accent-green)] border border-[var(--accent-green)]/30 font-sans">
+              <span className="text-xs px-2 py-0.5 rounded bg-[var(--accent-green-dim)] text-[var(--accent-green)] border border-[var(--accent-green-border)] font-sans">
                 Active
               </span>
             </div>
@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
             {profileData.favoriteTrack && (
               <div className="inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-md bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[var(--text-secondary)]">
                 <Music className="w-3.5 h-3.5 text-[var(--accent-violet)] animate-pulse" />
-                <span>Now Playing: {profileData.favoriteTrack.title} - {profileData.favoriteTrack.artist}</span>
+                <span>Đang nghe: {profileData.favoriteTrack.title} - {profileData.favoriteTrack.artist}</span>
               </div>
             )}
           </div>
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
           {/* Quick Links */}
           <div className="space-y-3">
             <h4 className="text-xs font-mono uppercase tracking-widest text-[var(--accent-cyan)] font-semibold">
-              Directory
+              Khám phá
             </h4>
             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
               <li>
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
           {/* Social Links & Contact */}
           <div className="space-y-3">
             <h4 className="text-xs font-mono uppercase tracking-widest text-[var(--accent-cyan)] font-semibold">
-              Connect
+              Kết nối
             </h4>
             <div className="flex items-center gap-3">
               <a
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
               </a>
             </div>
             <p className="text-xs text-[var(--text-muted)] font-mono">
-              Status: Open to internships & collaborative projects.
+              Đang sẵn sàng cho thực tập & dự án hợp tác.
             </p>
           </div>
         </div>

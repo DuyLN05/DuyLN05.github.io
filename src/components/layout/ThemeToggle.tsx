@@ -11,7 +11,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => 
     <button
       onClick={onToggle}
       type="button"
-      className="p-2 rounded-lg border border-[var(--border-cyber)] bg-[var(--bg-secondary)] hover:border-[var(--accent-cyan)] hover:shadow-neon-cyan transition-all text-[var(--accent-cyan)] flex items-center justify-center focus:outline-none"
+      className="p-2 rounded-full border border-[var(--border-cyber)] bg-[var(--bg-secondary)] hover:border-[var(--accent-cyan)] hover:shadow-neon-cyan transition-all text-[var(--accent-cyan)] flex items-center justify-center focus:outline-none"
       aria-label={theme === 'dark' ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối'}
       title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
     >

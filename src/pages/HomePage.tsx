@@ -23,20 +23,28 @@ export const HomePage: React.FC<HomePageProps> = ({ onToggleTheme }) => {
     <div className="space-y-16 md:space-y-24">
       {/* 1. HERO SECTION */}
       <section className="relative pt-4 sm:pt-8 pb-8">
+        {/* Bong bóng nổi (trang trí) */}
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none">
+          <span className="bubble" style={{ left: '6%', width: 14, height: 14, animationDelay: '0s' }} />
+          <span className="bubble" style={{ left: '22%', width: 8, height: 8, animationDelay: '3s' }} />
+          <span className="bubble" style={{ left: '48%', width: 18, height: 18, animationDelay: '6s', animationDuration: '15s' }} />
+          <span className="bubble" style={{ left: '71%', width: 10, height: 10, animationDelay: '2s' }} />
+          <span className="bubble" style={{ left: '90%', width: 16, height: 16, animationDelay: '8s', animationDuration: '14s' }} />
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Hero Left Content */}
           <div className="lg:col-span-7 space-y-6">
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-[var(--accent-cyan-dim)] text-[var(--accent-cyan)] border border-[var(--border-cyber)]">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[var(--accent-green)] animate-pulse" />
               <span>Available for internships & collaborations</span>
             </div>
 
             {/* Main Title & Role */}
             <div className="space-y-2">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[var(--text-primary)]">
-                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-cyan)] via-[var(--accent-violet)] to-[var(--accent-magenta)]">{profileData.name}</span>
+                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-cyan)] via-[var(--accent-violet)] to-[var(--accent-green)]">{profileData.name}</span>
               </h1>
               <p className="text-lg sm:text-xl font-mono text-[var(--accent-cyan)]">
                 {profileData.title}
@@ -52,7 +60,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onToggleTheme }) => {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 to="/projects"
-                className="px-5 py-3 rounded-lg font-mono text-xs sm:text-sm font-bold bg-[var(--accent-cyan)] text-black hover:bg-cyan-300 hover:shadow-neon-cyan transition-all flex items-center gap-2"
+                className="px-5 py-3 rounded-lg font-mono text-xs sm:text-sm font-bold bg-[var(--accent-cyan)] text-[var(--on-accent)] hover:brightness-110 hover:shadow-neon-cyan transition-all flex items-center gap-2"
               >
                 <FolderGit2 className="w-4 h-4" />
                 <span>View Projects</span>
@@ -75,7 +83,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onToggleTheme }) => {
             </div>
           </div>
 
-          {/* Hero Right Widget (Interactive Cyber Terminal) */}
+          {/* Hero Right Widget (Interactive Ocean Terminal) */}
           <div className="lg:col-span-5">
             <TerminalWidget onToggleTheme={onToggleTheme} />
           </div>
@@ -129,7 +137,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onToggleTheme }) => {
       {/* 3. TECH STACK */}
       <section>
         <SectionHeading
-          badge="Tech Matrix"
+          badge="Tech Stack"
           title="Công nghệ & Kỹ năng cốt lõi"
           subtitle="Danh mục các công nghệ mình sử dụng thường xuyên trong việc xây dựng sản phẩm và học tập thực tế."
         />
@@ -199,7 +207,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onToggleTheme }) => {
       </section>
 
       {/* 6. MUSIC CORNER & CURRENT FOCUS */}
-      <section className="hud-panel hud-panel-corner rounded-2xl p-6 sm:p-8 border-[var(--accent-violet)]/30">
+      <section className="hud-panel hud-panel-corner rounded-2xl p-6 sm:p-8 border-[var(--accent-violet-border)]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
             <div className="inline-flex items-center gap-2 text-xs font-mono text-[var(--accent-violet)] uppercase tracking-wider">
@@ -216,7 +224,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onToggleTheme }) => {
 
           <Link
             to="/lab"
-            className="px-5 py-3 rounded-lg font-mono text-xs sm:text-sm font-bold bg-[var(--accent-violet)] text-black hover:bg-violet-300 hover:shadow-neon-violet transition-all shrink-0 flex items-center gap-2"
+            className="px-5 py-3 rounded-lg font-mono text-xs sm:text-sm font-bold bg-[var(--accent-violet)] text-[var(--on-accent)] hover:brightness-110 hover:shadow-neon-violet transition-all shrink-0 flex items-center gap-2"
           >
             <Sparkles className="w-4 h-4" />
             <span>Khám phá Lab</span>
@@ -236,7 +244,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onToggleTheme }) => {
           <div className="pt-4 flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
-              className="px-6 py-3 rounded-lg font-mono text-xs sm:text-sm font-bold bg-[var(--accent-cyan)] text-black hover:bg-cyan-300 hover:shadow-neon-cyan transition-all"
+              className="px-6 py-3 rounded-lg font-mono text-xs sm:text-sm font-bold bg-[var(--accent-cyan)] text-[var(--on-accent)] hover:brightness-110 hover:shadow-neon-cyan transition-all"
             >
               Liên hệ ngay
             </Link>

@@ -22,7 +22,7 @@ export const ProjectsPage: React.FC = () => {
   return (
     <div className="space-y-12">
       <SectionHeading
-        badge="Projects HUD"
+        badge="Projects"
         title="Dự án Kỹ thuật & Thực nghiệm"
         subtitle="Tổng hợp các sản phẩm phần mềm, đồ án học tập và công cụ mã nguồn mở mình đã xây dựng."
       />
@@ -38,7 +38,7 @@ export const ProjectsPage: React.FC = () => {
               type="button"
               className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all ${
                 selectedCategory === category
-                  ? 'bg-[var(--accent-cyan)] text-black font-bold shadow-neon-cyan'
+                  ? 'bg-[var(--accent-cyan)] text-[var(--on-accent)] font-bold shadow-neon-cyan'
                   : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-subtle)]'
               }`}
             >

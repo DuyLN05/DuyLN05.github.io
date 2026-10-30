@@ -73,14 +73,14 @@ export const ContactPage: React.FC = () => {
                   aria-label="Sao chép địa chỉ email"
                 >
                   {copiedEmail ? (
-                    <Check className="w-4 h-4 text-emerald-400" />
+                    <Check className="w-4 h-4 text-[var(--accent-green)]" />
                   ) : (
                     <Copy className="w-4 h-4" />
                   )}
                 </button>
               </div>
               {copiedEmail && (
-                <p className="text-[11px] font-mono text-emerald-400 animate-fadeIn">
+                <p className="text-[11px] font-mono text-[var(--accent-green)] animate-fadeIn">
                   ✓ Đã chép email vào clipboard!
                 </p>
               )}
@@ -219,7 +219,7 @@ export const ContactPage: React.FC = () => {
 
             <button
               type="submit"
-              className="w-full py-3 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-black hover:bg-cyan-300 hover:shadow-neon-cyan transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-[var(--on-accent)] hover:brightness-110 hover:shadow-neon-cyan transition-all flex items-center justify-center gap-2"
             >
               <Send className="w-4 h-4" />
               <span>Gửi thư qua Email Client</span>

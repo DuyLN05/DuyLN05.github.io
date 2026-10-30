@@ -1,7 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" fill="none">
-  <rect width="600" height="350" fill="#070A13"/>
-  <rect x="10" y="10" width="580" height="330" rx="16" stroke="#FF4FD8" stroke-opacity="0.3" stroke-width="2"/>
-  <polyline points="100,175 220,175 250,90 280,240 310,130 330,190 350,175 500,175" stroke="#FF4FD8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="280" cy="240" r="6" fill="#38E8FF"/>
-  <text x="300" y="295" text-anchor="middle" fill="#FF4FD8" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">ENDPOINT PULSE // LATENCY MONITOR</text>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E4A72"/>
+      <stop offset="0.55" stop-color="#0A2540"/>
+      <stop offset="1" stop-color="#06182B"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="350" fill="url(#sea)"/>
+  <rect x="10" y="10" width="580" height="330" rx="18" stroke="#FF9484" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M0 300 C 100 270, 200 330, 300 300 S 500 270, 600 300 V350 H0 Z" fill="#43D3E6" opacity="0.10"/>
+  <path d="M0 322 C 100 292, 200 350, 300 322 S 500 292, 600 322 V350 H0 Z" fill="#6AA7F5" opacity="0.12"/>
+  <circle cx="90" cy="70" r="5" stroke="#9CC2D6" stroke-opacity="0.5"/>
+  <circle cx="520" cy="100" r="8" stroke="#9CC2D6" stroke-opacity="0.4"/>
+  <circle cx="550" cy="60" r="4" stroke="#9CC2D6" stroke-opacity="0.5"/>
+  <polyline points="100,165 220,165 250,90 280,230 310,125 330,180 350,165 500,165" stroke="#FF9484" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="280" cy="230" r="6" fill="#43D3E6"/>
+  <text x="300" y="290" text-anchor="middle" fill="#FF9484" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">ENDPOINT PULSE // LATENCY</text>
 </svg>

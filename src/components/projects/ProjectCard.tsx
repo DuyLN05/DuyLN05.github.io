@@ -17,8 +17,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <Badge variant="cyan">{project.category}</Badge>
           <span className={`text-xs font-mono px-2 py-0.5 rounded border ${
             project.status === 'Completed'
-              ? 'border-emerald-500/30 text-emerald-400 bg-emerald-950/20'
-              : 'border-amber-500/30 text-amber-400 bg-amber-950/20'
+              ? 'border-[var(--accent-green-border)] text-[var(--accent-green)] bg-[var(--accent-green-dim)]'
+              : 'border-[var(--accent-sand-border)] text-[var(--accent-sand)] bg-[var(--accent-sand-dim)]'
           }`}>
             {project.status}
           </span>

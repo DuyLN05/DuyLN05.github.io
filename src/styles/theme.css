@@ -1,55 +1,118 @@
+/*
+  OCEAN THEME
+  Tên biến được giữ nguyên để không phải sửa component:
+    --accent-cyan    -> aqua / xanh nước biển (màu chủ đạo)
+    --accent-violet  -> azure / xanh da trời
+    --accent-magenta -> coral / san hô (điểm nhấn ấm)
+    --accent-green   -> seafoam / xanh ngọc (trạng thái tốt)
+    --accent-sand    -> cát (cảnh báo nhẹ)
+*/
 :root {
-  /* Dark Theme Tokens (Default) */
-  --bg-primary: #070A13;
-  --bg-secondary: #0D1426;
-  --bg-surface: #121C35;
-  --bg-surface-glass: rgba(18, 28, 53, 0.75);
-  
-  --text-primary: #F4F7FB;
-  --text-secondary: #A8B3C7;
-  --text-muted: #64748B;
-  
-  --accent-cyan: #38E8FF;
-  --accent-cyan-dim: rgba(56, 232, 255, 0.15);
-  --accent-violet: #9B7CFF;
-  --accent-violet-dim: rgba(155, 124, 255, 0.15);
-  --accent-magenta: #FF4FD8;
-  --accent-green: #00F5A0;
+  /* ===== Dark: Deep Sea (mặc định) ===== */
+  --bg-primary: #06182B;
+  --bg-secondary: #0A2540;
+  --bg-surface: #0E3050;
+  --bg-surface-glass: rgba(11, 40, 69, 0.72);
 
-  --border-cyber: rgba(56, 232, 255, 0.2);
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --text-primary: #EAF6FB;
+  --text-secondary: #9CC2D6;
+  --text-muted: #7499AF;
 
-  --shadow-neon-cyan: 0 0 20px rgba(56, 232, 255, 0.35);
-  --shadow-neon-violet: 0 0 20px rgba(155, 124, 255, 0.35);
-  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  --accent-cyan: #43D3E6;
+  --accent-cyan-dim: rgba(67, 211, 230, 0.14);
+  --accent-violet: #6AA7F5;
+  --accent-violet-dim: rgba(106, 167, 245, 0.14);
+  --accent-violet-border: rgba(106, 167, 245, 0.35);
+  --accent-magenta: #FF9484;
+  --accent-magenta-dim: rgba(255, 148, 132, 0.12);
+  --accent-magenta-border: rgba(255, 148, 132, 0.35);
+  --accent-green: #5FE3B5;
+  --accent-green-dim: rgba(95, 227, 181, 0.12);
+  --accent-green-border: rgba(95, 227, 181, 0.35);
+  --accent-sand: #F0D49A;
+  --accent-sand-dim: rgba(240, 212, 154, 0.10);
+  --accent-sand-border: rgba(240, 212, 154, 0.35);
+  --danger: #FF8E8E;
+  --danger-dim: rgba(255, 142, 142, 0.12);
+  --danger-border: rgba(255, 142, 142, 0.38);
 
-  --grid-line-color: rgba(56, 232, 255, 0.035);
+  /* Màu chữ đặt trên nền accent (nút bấm) */
+  --on-accent: #04202F;
+
+  --border-cyber: rgba(67, 211, 230, 0.22);
+  --border-subtle: rgba(180, 225, 245, 0.10);
+
+  --shadow-neon-cyan: 0 6px 22px rgba(67, 211, 230, 0.28);
+  --shadow-neon-violet: 0 6px 22px rgba(106, 167, 245, 0.30);
+  --shadow-card: 0 10px 34px -8px rgba(2, 12, 24, 0.55);
+
+  /* Nền đại dương */
+  --ocean-glow-1: rgba(67, 211, 230, 0.16);
+  --ocean-glow-2: rgba(106, 167, 245, 0.14);
+  --ocean-ray: rgba(160, 230, 245, 0.07);
+  --wave-fill: #0A2540;
+  --scrollbar-thumb: rgba(67, 211, 230, 0.35);
 }
 
 html.light {
-  /* Light Theme Tokens */
-  --bg-primary: #F8FAFC;
-  --bg-secondary: #F1F5F9;
+  /* ===== Light: Shallow Lagoon ===== */
+  --bg-primary: #EFF9FC;
+  --bg-secondary: #DDF0F7;
   --bg-surface: #FFFFFF;
-  --bg-surface-glass: rgba(255, 255, 255, 0.85);
+  --bg-surface-glass: rgba(255, 255, 255, 0.78);
 
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
+  --text-primary: #0B2A3F;
+  --text-secondary: #345A70;
+  --text-muted: #587A8E;
 
-  --accent-cyan: #0284C7;
-  --accent-cyan-dim: rgba(2, 132, 199, 0.1);
-  --accent-violet: #7C3AED;
-  --accent-violet-dim: rgba(124, 58, 237, 0.1);
-  --accent-magenta: #DB2777;
-  --accent-green: #059669;
+  --accent-cyan: #0A7EA4;
+  --accent-cyan-dim: rgba(10, 126, 164, 0.10);
+  --accent-violet: #2F6FD0;
+  --accent-violet-dim: rgba(47, 111, 208, 0.10);
+  --accent-violet-border: rgba(47, 111, 208, 0.30);
+  --accent-magenta: #C8503F;
+  --accent-magenta-dim: rgba(200, 80, 63, 0.09);
+  --accent-magenta-border: rgba(200, 80, 63, 0.30);
+  --accent-green: #0B8A66;
+  --accent-green-dim: rgba(11, 138, 102, 0.10);
+  --accent-green-border: rgba(11, 138, 102, 0.32);
+  --accent-sand: #8A6416;
+  --accent-sand-dim: rgba(176, 130, 40, 0.10);
+  --accent-sand-border: rgba(176, 130, 40, 0.35);
+  --danger: #B93A3A;
+  --danger-dim: rgba(185, 58, 58, 0.08);
+  --danger-border: rgba(185, 58, 58, 0.32);
 
-  --border-cyber: rgba(2, 132, 199, 0.25);
-  --border-subtle: rgba(0, 0, 0, 0.08);
+  --on-accent: #FFFFFF;
 
-  --shadow-neon-cyan: 0 0 16px rgba(2, 132, 199, 0.2);
-  --shadow-neon-violet: 0 0 16px rgba(124, 58, 237, 0.2);
-  --shadow-card: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
+  --border-cyber: rgba(10, 126, 164, 0.24);
+  --border-subtle: rgba(11, 42, 63, 0.10);
 
-  --grid-line-color: rgba(2, 132, 199, 0.04);
+  --shadow-neon-cyan: 0 6px 18px rgba(10, 126, 164, 0.22);
+  --shadow-neon-violet: 0 6px 18px rgba(47, 111, 208, 0.22);
+  --shadow-card: 0 10px 28px -8px rgba(11, 60, 90, 0.16);
+
+  --ocean-glow-1: rgba(80, 200, 225, 0.30);
+  --ocean-glow-2: rgba(120, 175, 245, 0.20);
+  --ocean-ray: rgba(255, 255, 255, 0.55);
+  --wave-fill: #DDF0F7;
+  --scrollbar-thumb: rgba(10, 126, 164, 0.35);
+}
+
+/* Vùng luôn tối (terminal, khối code) – dùng cả ở light mode */
+.theme-deep {
+  --bg-primary: #06182B;
+  --bg-secondary: #0A2540;
+  --bg-surface: #0E3050;
+  --text-primary: #EAF6FB;
+  --text-secondary: #9CC2D6;
+  --text-muted: #7499AF;
+  --accent-cyan: #43D3E6;
+  --accent-cyan-dim: rgba(67, 211, 230, 0.14);
+  --accent-violet: #6AA7F5;
+  --accent-green: #5FE3B5;
+  --accent-magenta: #FF9484;
+  --on-accent: #04202F;
+  --border-cyber: rgba(67, 211, 230, 0.22);
+  --border-subtle: rgba(180, 225, 245, 0.10);
 }

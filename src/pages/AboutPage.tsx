@@ -54,7 +54,7 @@ export const AboutPage: React.FC = () => {
               </div>
               <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]">
                 <span className="text-[var(--text-muted)]">Trạng thái:</span>
-                <span className="text-emerald-400 text-right">Sẵn sàng thực tập</span>
+                <span className="text-[var(--accent-green)] text-right">Sẵn sàng thực tập</span>
               </div>
               <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]">
                 <span className="text-[var(--text-muted)]">Đam mê:</span>
@@ -65,7 +65,7 @@ export const AboutPage: React.FC = () => {
             <a
               href={profileData.cvUrl || '#'}
               download
-              className="w-full mt-4 px-4 py-2.5 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-black hover:bg-cyan-300 hover:shadow-neon-cyan transition-all flex items-center justify-center gap-2"
+              className="w-full mt-4 px-4 py-2.5 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-[var(--on-accent)] hover:brightness-110 hover:shadow-neon-cyan transition-all flex items-center justify-center gap-2"
               onClick={() => {
                 // If CV file doesn't exist yet, show clean alert
                 fetch(profileData.cvUrl || '')
@@ -112,7 +112,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="p-5 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-cyber)] space-y-2">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3">
+            <div className="w-9 h-9 rounded-lg bg-[var(--accent-green-dim)] text-[var(--accent-green)] flex items-center justify-center mb-3">
               <GraduationCap className="w-5 h-5" />
             </div>
             <h4 className="font-bold text-base text-[var(--text-primary)]">Học hỏi không ngừng</h4>
@@ -122,7 +122,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="p-5 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-cyber)] space-y-2">
-            <div className="w-9 h-9 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center mb-3">
+            <div className="w-9 h-9 rounded-lg bg-[var(--accent-magenta-dim)] text-[var(--accent-magenta)] flex items-center justify-center mb-3">
               <Heart className="w-5 h-5" />
             </div>
             <h4 className="font-bold text-base text-[var(--text-primary)]">Trách nhiệm & Hợp tác</h4>

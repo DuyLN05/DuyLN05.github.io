@@ -1,8 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" fill="none">
-  <rect width="600" height="350" fill="#070A13"/>
-  <rect x="10" y="10" width="580" height="330" rx="16" stroke="#00F5A0" stroke-opacity="0.3" stroke-width="2"/>
-  <rect x="60" y="70" width="140" height="180" rx="8" fill="#121C35" stroke="#38E8FF" stroke-opacity="0.4"/>
-  <rect x="230" y="70" width="140" height="180" rx="8" fill="#121C35" stroke="#9B7CFF" stroke-opacity="0.4"/>
-  <rect x="400" y="70" width="140" height="180" rx="8" fill="#121C35" stroke="#00F5A0" stroke-opacity="0.4"/>
-  <text x="300" y="295" text-anchor="middle" fill="#00F5A0" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">CYBER TASK // KANBAN FLOW</text>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E4A72"/>
+      <stop offset="0.55" stop-color="#0A2540"/>
+      <stop offset="1" stop-color="#06182B"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="350" fill="url(#sea)"/>
+  <rect x="10" y="10" width="580" height="330" rx="18" stroke="#5FE3B5" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M0 300 C 100 270, 200 330, 300 300 S 500 270, 600 300 V350 H0 Z" fill="#43D3E6" opacity="0.10"/>
+  <path d="M0 322 C 100 292, 200 350, 300 322 S 500 292, 600 322 V350 H0 Z" fill="#6AA7F5" opacity="0.12"/>
+  <circle cx="90" cy="70" r="5" stroke="#9CC2D6" stroke-opacity="0.5"/>
+  <circle cx="520" cy="100" r="8" stroke="#9CC2D6" stroke-opacity="0.4"/>
+  <circle cx="550" cy="60" r="4" stroke="#9CC2D6" stroke-opacity="0.5"/>
+  <rect x="60" y="60" width="140" height="180" rx="12" fill="#0E3050" stroke="#43D3E6" stroke-opacity="0.5"/>
+  <rect x="230" y="60" width="140" height="180" rx="12" fill="#0E3050" stroke="#6AA7F5" stroke-opacity="0.5"/>
+  <rect x="400" y="60" width="140" height="180" rx="12" fill="#0E3050" stroke="#5FE3B5" stroke-opacity="0.5"/>
+  <rect x="74" y="80" width="112" height="22" rx="6" fill="#43D3E6" opacity="0.25"/>
+  <rect x="244" y="80" width="112" height="22" rx="6" fill="#6AA7F5" opacity="0.25"/>
+  <rect x="414" y="80" width="112" height="22" rx="6" fill="#5FE3B5" opacity="0.25"/>
+  <text x="300" y="290" text-anchor="middle" fill="#5FE3B5" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">TASK FLOW // KANBAN</text>
 </svg>

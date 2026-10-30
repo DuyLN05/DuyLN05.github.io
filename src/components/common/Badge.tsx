@@ -13,9 +13,9 @@ export const Badge: React.FC<BadgeProps> = ({
 }) => {
   const variantStyles = {
     cyan: 'bg-[var(--accent-cyan-dim)] text-[var(--accent-cyan)] border-[var(--border-cyber)]',
-    violet: 'bg-[var(--accent-violet-dim)] text-[var(--accent-violet)] border-[var(--accent-violet)]/30',
-    magenta: 'bg-[var(--accent-magenta)]/10 text-[var(--accent-magenta)] border-[var(--accent-magenta)]/30',
-    green: 'bg-[var(--accent-green)]/10 text-[var(--accent-green)] border-[var(--accent-green)]/30',
+    violet: 'bg-[var(--accent-violet-dim)] text-[var(--accent-violet)] border-[var(--accent-violet-border)]',
+    magenta: 'bg-[var(--accent-magenta-dim)] text-[var(--accent-magenta)] border-[var(--accent-magenta-border)]',
+    green: 'bg-[var(--accent-green-dim)] text-[var(--accent-green)] border-[var(--accent-green-border)]',
     default: 'bg-[var(--bg-surface)] text-[var(--text-secondary)] border-[var(--border-subtle)]'
   };
 

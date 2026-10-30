@@ -46,7 +46,7 @@ export const PostsPage: React.FC = () => {
               type="button"
               className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all ${
                 selectedCategory === cat
-                  ? 'bg-[var(--accent-violet)] text-black font-bold shadow-neon-violet'
+                  ? 'bg-[var(--accent-violet)] text-[var(--on-accent)] font-bold shadow-neon-violet'
                   : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-subtle)]'
               }`}
             >
@@ -83,7 +83,7 @@ export const PostsPage: React.FC = () => {
           </p>
           <button
             onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}
-            className="mt-4 px-4 py-2 rounded text-xs font-mono bg-[var(--accent-violet-dim)] text-[var(--accent-violet)] border border-[var(--accent-violet)]/30"
+            className="mt-4 px-4 py-2 rounded text-xs font-mono bg-[var(--accent-violet-dim)] text-[var(--accent-violet)] border border-[var(--accent-violet-border)]"
           >
             Đặt lại bộ lọc
           </button>

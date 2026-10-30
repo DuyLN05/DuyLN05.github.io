@@ -11,59 +11,164 @@
     overflow-x: hidden;
   }
 
+  ::selection {
+    background: var(--accent-cyan);
+    color: var(--on-accent);
+  }
+
   /* Accessible Focus States */
   :focus-visible {
     outline: 2px solid var(--accent-cyan);
     outline-offset: 3px;
-    border-radius: 4px;
+    border-radius: 6px;
   }
 }
 
-/* Cyberpunk Background Grid */
-.cyber-grid {
-  background-image: 
-    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
-  background-size: 32px 32px;
+/* ===== Nền đại dương: ánh sáng từ mặt nước + tia nắng ===== */
+.ocean-bg {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(900px 480px at 12% -8%, var(--ocean-glow-1), transparent 70%),
+    radial-gradient(800px 460px at 92% 4%, var(--ocean-glow-2), transparent 70%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background-attachment: fixed;
 }
 
-/* HUD Panels & Glowing Borders */
+/* Tia nắng xuyên mặt nước */
+.ocean-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 70vh;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      105deg,
+      transparent 0 90px,
+      var(--ocean-ray) 90px 130px,
+      transparent 130px 260px
+    );
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+          mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+  opacity: 0.8;
+}
+
+/* ===== Panel kính (giữ tên class cũ) ===== */
 .hud-panel {
   background: var(--bg-surface-glass);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(14px);
+          backdrop-filter: blur(14px);
   border: 1px solid var(--border-cyber);
   box-shadow: var(--shadow-card);
   position: relative;
 }
 
-.hud-panel-corner::before,
-.hud-panel-corner::after {
+/* Đường sáng mảnh như ánh nước ở cạnh trên + chấm bọt biển ở góc */
+.hud-panel-corner::before {
   content: '';
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-color: var(--accent-cyan);
+  top: -1px;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-violet), transparent);
+  opacity: 0.85;
   pointer-events: none;
 }
 
-.hud-panel-corner::before {
-  top: -1px;
-  left: -1px;
-  border-top: 2px solid var(--accent-cyan);
-  border-left: 2px solid var(--accent-cyan);
+.hud-panel-corner::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--accent-cyan);
+  opacity: 0.55;
+  pointer-events: none;
 }
 
-.hud-panel-corner::after {
-  bottom: -1px;
-  right: -1px;
-  border-bottom: 2px solid var(--accent-cyan);
-  border-right: 2px solid var(--accent-cyan);
+/* ===== Sóng biển ===== */
+.wave-divider {
+  display: block;
+  width: 100%;
+  height: 56px;
+  color: var(--wave-fill);
+}
+
+.wave-layer {
+  animation: wave-drift 14s linear infinite;
+}
+
+.wave-layer-slow {
+  animation: wave-drift 24s linear infinite reverse;
+}
+
+@keyframes wave-drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ===== Bong bóng nổi ở hero ===== */
+.bubble {
+  position: absolute;
+  bottom: -20px;
+  border-radius: 9999px;
+  border: 1px solid var(--accent-cyan);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35), transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  animation: bubble-rise 12s ease-in infinite;
+}
+
+@keyframes bubble-rise {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  12%  { opacity: 0.5; }
+  100% { transform: translateY(-420px) translateX(24px); opacity: 0; }
+}
+
+/* ===== Tiện ích animation / shadow (có sẵn ngay cả khi tailwind.config chưa khai báo) ===== */
+@layer utilities {
+  .shadow-neon-cyan { box-shadow: var(--shadow-neon-cyan); }
+  .shadow-neon-violet { box-shadow: var(--shadow-neon-violet); }
+  .hover\:shadow-neon-cyan:hover { box-shadow: var(--shadow-neon-cyan); }
+  .hover\:shadow-neon-violet:hover { box-shadow: var(--shadow-neon-violet); }
+
+  .animate-fadeIn { animation: fadeIn 0.3s ease-out both; }
+  .animate-fade { animation: fadeIn 0.3s ease-out both; }
+  .animate-spin-slow { animation: spin-slow 12s linear infinite; }
+  .animate-equalizer { animation: equalizer 0.9s ease-in-out infinite alternate; transform-origin: bottom; }
+  .animate-float { animation: float 5s ease-in-out infinite; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes equalizer {
+  from { transform: scaleY(0.35); }
+  to   { transform: scaleY(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -71,49 +176,49 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(56, 232, 255, 0.3);
-  border-radius: 4px;
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
+  border: 2px solid var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-cyan);
-  box-shadow: 0 0 10px var(--accent-cyan);
 }
 
-/* Code Highlighting Minimal Theme */
+/* Code Highlighting – luôn nền biển sâu */
 pre code.hljs {
   display: block;
   overflow-x: auto;
   padding: 1rem;
-  background: #0a0f1d !important;
-  color: #e2e8f0;
+  background: #07203A !important;
+  color: #DCEFF7;
   border-radius: 0.5rem;
-  border: 1px solid rgba(56, 232, 255, 0.15);
+  border: 1px solid rgba(67, 211, 230, 0.15);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
 .hljs-keyword, .hljs-selector-tag, .hljs-subst {
-  color: #ff4fd8;
+  color: #FF9484;
   font-weight: 600;
 }
 
 .hljs-string, .hljs-title, .hljs-section, .hljs-attribute, .hljs-literal, .hljs-template-tag, .hljs-template-variable, .hljs-type {
-  color: #00f5a0;
+  color: #5FE3B5;
 }
 
 .hljs-comment, .hljs-quote, .hljs-deletion, .hljs-meta {
-  color: #64748b;
+  color: #7499AF;
   font-style: italic;
 }
 
 .hljs-number, .hljs-regexp, .hljs-link {
-  color: #38e8ff;
+  color: #43D3E6;
 }
 
 .hljs-function, .hljs-variable {
-  color: #9b7cff;
+  color: #6AA7F5;
 }
 
 /* Respect Reduced Motion */
@@ -126,4 +231,5 @@ pre code.hljs {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .bubble { display: none; }
 }

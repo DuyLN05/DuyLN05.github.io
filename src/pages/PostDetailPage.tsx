@@ -18,7 +18,7 @@ export const PostDetailPage: React.FC = () => {
         </p>
         <Link
           to="/posts"
-          className="px-4 py-2 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-black inline-flex items-center gap-2"
+          className="px-4 py-2 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-[var(--on-accent)] inline-flex items-center gap-2"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Quay lại trang Blog</span>

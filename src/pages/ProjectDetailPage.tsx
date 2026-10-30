@@ -17,7 +17,7 @@ export const ProjectDetailPage: React.FC = () => {
         </p>
         <Link
           to="/projects"
-          className="px-4 py-2 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-black inline-flex items-center gap-2"
+          className="px-4 py-2 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-[var(--on-accent)] inline-flex items-center gap-2"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Quay lại danh sách dự án</span>
@@ -77,7 +77,7 @@ export const ProjectDetailPage: React.FC = () => {
               href={project.demoUrl}
               target="_blank"
               rel="noreferrer"
-              className="px-4 py-2.5 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-black hover:bg-cyan-300 hover:shadow-neon-cyan transition-all flex items-center gap-2"
+              className="px-4 py-2.5 rounded-lg font-mono text-xs font-bold bg-[var(--accent-cyan)] text-[var(--on-accent)] hover:brightness-110 hover:shadow-neon-cyan transition-all flex items-center gap-2"
             >
               <ExternalLink className="w-4 h-4" />
               <span>Xem Live Demo</span>
@@ -132,7 +132,7 @@ export const ProjectDetailPage: React.FC = () => {
         {/* 3. Key Features */}
         <section className="space-y-3">
           <h3 className="text-xl font-bold text-[var(--text-primary)] flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+            <CheckCircle2 className="w-5 h-5 text-[var(--accent-green)]" />
             3. Các tính năng nổi bật
           </h3>
           <ul className="space-y-2">
@@ -146,8 +146,8 @@ export const ProjectDetailPage: React.FC = () => {
         </section>
 
         {/* 4. Technical Challenge */}
-        <section className="space-y-3 p-5 rounded-xl bg-amber-950/10 border border-amber-500/30">
-          <h3 className="text-lg font-bold text-amber-400 flex items-center gap-2">
+        <section className="space-y-3 p-5 rounded-xl bg-[var(--accent-sand-dim)] border border-[var(--accent-sand-border)]">
+          <h3 className="text-lg font-bold text-[var(--accent-sand)] flex items-center gap-2">
             <AlertTriangle className="w-5 h-5" />
             4. Thách thức kỹ thuật lớn nhất & Cách giải quyết
           </h3>
@@ -157,7 +157,7 @@ export const ProjectDetailPage: React.FC = () => {
         </section>
 
         {/* 5. Learnings */}
-        <section className="space-y-3 p-5 rounded-xl bg-purple-950/10 border border-purple-500/30">
+        <section className="space-y-3 p-5 rounded-xl bg-[var(--accent-violet-dim)] border border-[var(--accent-violet-border)]">
           <h3 className="text-lg font-bold text-[var(--accent-violet)] flex items-center gap-2">
             <Lightbulb className="w-5 h-5" />
             5. Bài học rút ra & Định hướng phát triển tiếp

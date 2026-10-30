@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Terminal, Menu, X, Cpu } from 'lucide-react';
+import { Waves, Menu, X, Compass } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 
 interface NavbarProps {
@@ -33,8 +33,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
             onClick={closeMenu}
             className="flex items-center gap-2.5 font-mono text-base sm:text-lg font-bold tracking-wider text-[var(--text-primary)] hover:text-[var(--accent-cyan)] transition-colors group"
           >
-            <div className="w-8 h-8 rounded border border-[var(--accent-cyan)] flex items-center justify-center bg-cyan-950/30 text-[var(--accent-cyan)] shadow-[0_0_10px_rgba(56,232,255,0.3)] group-hover:scale-105 transition-transform">
-              <Terminal className="w-4 h-4" />
+            <div className="w-9 h-9 rounded-xl border border-[var(--accent-cyan)] flex items-center justify-center bg-[var(--accent-cyan-dim)] text-[var(--accent-cyan)] shadow-neon-cyan group-hover:scale-105 transition-transform">
+              <Waves className="w-4 h-4" />
             </div>
             <span>
               DUY<span className="text-[var(--accent-cyan)]">.DEV</span>
@@ -51,9 +51,9 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `px-3 py-1.5 rounded text-sm font-medium transition-all relative ${
+                  `px-3.5 py-1.5 rounded-full text-sm font-medium transition-all relative ${
                     isActive
-                      ? 'text-[var(--accent-cyan)] bg-[var(--accent-cyan-dim)] border border-[var(--border-cyber)] shadow-[0_0_12px_rgba(56,232,255,0.2)]'
+                      ? 'text-[var(--accent-cyan)] bg-[var(--accent-cyan-dim)] border border-[var(--border-cyber)] shadow-neon-cyan'
                       : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]'
                   }`
                 }
@@ -85,8 +85,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-[var(--border-cyber)] bg-[var(--bg-surface)] px-4 pt-3 pb-5 space-y-2 animate-fadeIn shadow-2xl">
           <div className="text-xs font-mono uppercase tracking-widest text-[var(--text-muted)] px-3 mb-2 flex items-center gap-1.5">
-            <Cpu className="w-3.5 h-3.5 text-[var(--accent-cyan)]" />
-            Navigation HUD
+            <Compass className="w-3.5 h-3.5 text-[var(--accent-cyan)]" />
+            Hải trình
           </div>
           {navLinks.map((link) => (
             <NavLink
@@ -94,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
               to={link.to}
               onClick={closeMenu}
               className={({ isActive }) =>
-                `block px-3 py-2 rounded text-base font-medium transition-all ${
+                `block px-3 py-2 rounded-lg text-base font-medium transition-all ${
                   isActive
                     ? 'text-[var(--accent-cyan)] bg-[var(--accent-cyan-dim)] border-l-4 border-[var(--accent-cyan)]'
                     : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]'
