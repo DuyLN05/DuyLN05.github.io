@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" fill="none">
+  <rect width="600" height="350" fill="#070A13"/>
+  <rect x="10" y="10" width="580" height="330" rx="16" stroke="#FF4FD8" stroke-opacity="0.3" stroke-width="2"/>
+  <polyline points="100,175 220,175 250,90 280,240 310,130 330,190 350,175 500,175" stroke="#FF4FD8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="280" cy="240" r="6" fill="#38E8FF"/>
+  <text x="300" y="295" text-anchor="middle" fill="#FF4FD8" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">ENDPOINT PULSE // LATENCY MONITOR</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" fill="none">
+  <rect width="600" height="350" fill="#070A13"/>
+  <rect x="10" y="10" width="580" height="330" rx="16" stroke="#00F5A0" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="60" y="70" width="140" height="180" rx="8" fill="#121C35" stroke="#38E8FF" stroke-opacity="0.4"/>
+  <rect x="230" y="70" width="140" height="180" rx="8" fill="#121C35" stroke="#9B7CFF" stroke-opacity="0.4"/>
+  <rect x="400" y="70" width="140" height="180" rx="8" fill="#121C35" stroke="#00F5A0" stroke-opacity="0.4"/>
+  <text x="300" y="295" text-anchor="middle" fill="#00F5A0" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">CYBER TASK // KANBAN FLOW</text>
+</svg>

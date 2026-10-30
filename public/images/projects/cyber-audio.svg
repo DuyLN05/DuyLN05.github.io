@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" fill="none">
+  <rect width="600" height="350" fill="#070A13"/>
+  <rect x="10" y="10" width="580" height="330" rx="16" stroke="#38E8FF" stroke-opacity="0.3" stroke-width="2"/>
+  <circle cx="300" cy="175" r="80" stroke="#38E8FF" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="8 6"/>
+  <circle cx="300" cy="175" r="50" stroke="#FF4FD8" stroke-width="2" stroke-opacity="0.8"/>
+  <path d="M150 175 C 220 100, 260 250, 300 175 C 340 100, 380 250, 450 175" stroke="#00F5A0" stroke-width="4" stroke-linecap="round"/>
+  <text x="300" y="290" text-anchor="middle" fill="#38E8FF" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">CYBER AUDIO LAB // FFT SYNTH</text>
+</svg>
