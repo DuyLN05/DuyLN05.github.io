@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Le Nhat Duy | Full-stack Developer & Tech Enthusiast</title>
-    <meta name="description" content="Personal IT portfolio of Le Nhat Duy - Full-stack developer with modern web engineering, gaming aesthetics, and music rap vibes." />
+    <meta name="description" content="Personal IT portfolio of Le Nhat Duy - Full-stack developer with modern web engineering, gaming aesthetics, and music vibes." />
     
     <!-- Open Graph / Meta -->
     <meta property="og:type" content="website" />
@@ -19,8 +19,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#070A13] text-[#F4F7FB] antialiased selection:bg-[#38E8FF] selection:text-black min-h-screen">
-    <div id="root"></div>
+  <body style="margin: 0; background-color: #070A13; color: #F4F7FB;" class="bg-[#070A13] text-[#F4F7FB] antialiased selection:bg-[#38E8FF] selection:text-black min-h-screen">
+    <div id="root">
+      <div style="display: flex; min-height: 100vh; flex-direction: column; align-items: center; justify-content: center; background-color: #070A13; color: #38E8FF; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 2px;">
+        <div style="width: 32px; height: 32px; border: 2px solid #38E8FF; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 16px;"></div>
+        <div>INITIALIZING_CYBER_HUD...</div>
+        <style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
